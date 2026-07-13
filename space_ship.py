@@ -1,5 +1,4 @@
 import asyncio
-import time
 import curses
 import random
 
@@ -30,18 +29,11 @@ with open('animation/game_over.txt',
     game_over_frame = file.read()
 
 
-async def sleep(ticks):
-   for i in range(ticks):
-        await asyncio.sleep(0)
-
-
 def process_control(canvas, row, column, row_delta, column_delta, row_speed, column_speed):
     max_row, max_column = canvas.getmaxyx()
     rows_direction, columns_direction, space_pressed = read_controls(canvas)
     row_speed, column_speed = physics.update_speed(row_speed, column_speed, rows_direction, columns_direction)
     new_row, new_column = row + row_speed, column + column_speed
-    #new_row = row + rows_direction
-    #new_column = column + columns_direction
     if new_row < 0 or new_row > (max_row - row_delta):
         new_row = row
     if new_column < 0 or new_column > (max_column - column_delta):
@@ -94,7 +86,7 @@ async def rocket_animation():
     rocket_frames = [frame_1, frame_1, frame_2, frame_2]
     while True:
         for frame in rocket_frames:
-            await sleep(0)
+            await curses_tutorial.sleep(0)
             yield frame
 
 
@@ -130,7 +122,7 @@ async def animate_spaceship(canvas, row, column, coroutines):
             columns_speed
         )
         draw_frame(canvas, prev_row, prev_col, frame)
-        await sleep(1)
+        await curses_tutorial.sleep(0.1)
         draw_frame(canvas, prev_row, prev_col, frame, negative=True)
         draw_frame(canvas, prev_row, prev_col, frame)
         draw_frame(canvas, prev_row, prev_col, frame, negative=True)
