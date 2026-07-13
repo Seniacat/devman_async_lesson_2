@@ -8,13 +8,13 @@ import explosion
 from timeline import get_garbage_delay_tics, get_year
 
 
-with open('/home/lu-sidorovich@uc.local/PycharmProjects/PythonProject/lesson_2/animation/trash_large.txt', "r") as garbage_file:
+with open('animation/trash_large.txt', "r") as garbage_file:
   frame_large = garbage_file.read()
 
-with open('/home/lu-sidorovich@uc.local/PycharmProjects/PythonProject/lesson_2/animation/trash_small.txt', "r") as garbage_file:
+with open('animation/trash_small.txt', "r") as garbage_file:
   frame_small = garbage_file.read()
 
-with open('/home/lu-sidorovich@uc.local/PycharmProjects/PythonProject/lesson_2/animation/trash_xl.txt', "r") as garbage_file:
+with open('animation/trash_xl.txt', "r") as garbage_file:
   frame_xl = garbage_file.read()
 
 
