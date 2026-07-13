@@ -1,6 +1,6 @@
 import asyncio
 
-from global_state import coroutines, obstacles_list, obstacles_in_last_collisions, year, get_game_state
+from global_state import coroutines, obstacles_list, obstacles_in_last_collisions, year
 import curses_tutorial
 
 
